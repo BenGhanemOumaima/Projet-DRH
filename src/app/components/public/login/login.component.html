@@ -1,0 +1,60 @@
+<div id="app">
+    <section class="section">
+        <div class="d-flex flex-wrap align-items-stretch">
+            <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
+                <div class="p-4 m-3">
+                    <img src="assets/images/myLogo.png" alt="logo" width="150" class="  mb-5 mt-2">
+                    <h4 class="text-dark font-weight-normal">Bienvenue à <span class="font-weight-bold">DRH</span></h4>
+                    <p class="text-muted">Avant de vous lancer, vous devez vous connecter ou contacter l'administration si vous n'avez pas encore de compte.</p>
+                    <form method="POST" action="#" class="needs-validation" novalidate="" [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label for="code">Code</label>
+                            <input id="code" type="number" class="form-control" name="code" tabindex="1" formControlName="code" autofocus>
+                            <div *ngIf="code?.touched && code?.invalid">
+                                <small *ngIf="code?.errors?.required" class="text-danger">*Veuillez entrer votre code<br></small>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="d-block">
+                                <label for="password" class="control-label">Mot de passe</label>
+                            </div>
+                            <input id="password" type="password" class="form-control" name="password" tabindex="2" formControlName="password" autofocus>
+                            <div *ngIf="password?.touched && password?.invalid">
+                                <small *ngIf="password?.errors?.required" class="text-danger">*Veuillez entrer votre mot de passe<br></small>
+                                <small *ngIf="password?.errors?.pattern" class="text-danger">*Le mot de passe doit contenir au moins 1 lettre spéciale, 1 lettre miniscule, 1 lettre majuscule and 1 chiffre<br></small>
+                                <small *ngIf="password?.errors?.minlength" class="text-danger">*Le mot de passe doit contenir au moins 6 caractères.</small>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group text-right">
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">Se Connecter</button>
+
+
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            Bienvenue, <a href="./index.html">Retournez à la page d'Accueil</a>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+            <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" style="background-image: url('./assets/images/b1.jpg')">
+                <div class="absolute-bottom-left index-2">
+                    <div class="text-light p-5 pb-2">
+                        <div class="mb-5 pb-3">
+                            <h1 class="mb-2 display-4 font-weight-bold">Salut, </h1>
+                            <h5 class="font-weight-normal text-muted-transparent">"Le succès arrive toujours lorsq'une opportunité rencontre la préparation."</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

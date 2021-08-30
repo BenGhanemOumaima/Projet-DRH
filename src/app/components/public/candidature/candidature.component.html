@@ -1,0 +1,240 @@
+<app-navbar></app-navbar>
+<div class="header-background"></div>
+<div class="container mt-5">
+    <!-- Main content starts -->
+    <!-- Row Starts -->
+    <div class="row">
+        <div class="col-sm-12 p-0 mb-3">
+            <div class="main-header">
+                <h1>Postuler</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+    <!-- Row start -->
+    <div class="row">
+        <!-- Form Control starts -->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-header-text">État civil</h5>
+                    <div class="f-right">
+                        <a href="" data-toggle="modal" data-target="#input-type-Modal"><i class="icofont icofont-code-alt"></i></a>
+                    </div>
+                </div>
+                <div class="card-block container">
+                    <form [formGroup]="candidatureForm" (ngSubmit)="candidature()">
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="nom" class="form-control-label">Nom*</label>
+                                <input type="text" class="form-control " id="nom" aria-describedby="nom" formControlName="nom">
+                                <div *ngIf="nom?.touched && nom?.invalid">
+                                    <small *ngIf="nom?.errors?.required" class="text-danger">*Veuillez entrer votre nom<br></small>
+                                    <small *ngIf="nom?.errors?.minlength" class="text-danger">*Votre nom est invalid<br></small>
+                                    <small *ngIf="nom?.errors?.pattern" class="text-danger">*Votre nom doit contenir que des alphabets<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="prenom" class="form-control-label">Prénom*</label>
+                                <input type="text" class="form-control " id="prenom" aria-describedby="prenom" formControlName="prenom">
+                                <div *ngIf="prenom?.touched && prenom?.invalid">
+                                    <small *ngIf="prenom?.errors?.required" class="text-danger">*Veuillez entrer votre prénom<br></small>
+                                    <small *ngIf="prenom?.errors?.minlength" class="text-danger">*Votre prénom est invalid<br></small>
+                                    <small *ngIf="prenom?.errors?.pattern" class="text-danger">*Votre prénom doit contenir que des alphabets<br></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="adresse" class="form-control-label">Adresse*</label>
+                                <input type="text" class="form-control " id="adresse" aria-describedby="adresse" formControlName="adresse">
+                                <div *ngIf="adresse?.touched && adresse?.invalid">
+                                    <small *ngIf="adresse?.errors?.required" class="text-danger">*Veuillez entrer votre adresse<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="codepostal" class="form-control-label">Code Postal*</label>
+                                <input type="number" class="form-control " id="codepostal" aria-describedby="codepostal" formControlName="codepostal">
+                                <div *ngIf="codepostal?.touched && codepostal?.invalid">
+                                    <small *ngIf="codepostal?.errors?.required" class="text-danger">*Veuillez entrer votre code postal<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="ville" class="form-control-label">Ville*</label>
+                                <input type="text" class="form-control " id="ville" aria-describedby="ville" formControlName="ville">
+                                <div *ngIf="ville?.touched && ville?.invalid">
+                                    <small *ngIf="ville?.errors?.required" class="text-danger">*Veuillez entrer votre ville<br></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="datenaissance" class="form-control-label">Date de Naissance*</label>
+                                <input type="date" class="form-control " id="datenaissance" aria-describedby="datenaissance" formControlName="datenaissance">
+                                <div *ngIf="datenaissance?.touched && datenaissance?.invalid">
+                                    <small *ngIf="datenaissance?.errors?.required" class="text-danger">*Veuillez entrer votre date de naissance<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="nationnalité" class="form-control-label">Votre Nationnalité*</label>
+                                <input type="text" class="form-control " id="nationnalité" aria-describedby="nationnalité" formControlName="nationnalite">
+                                <div *ngIf="nationnalite?.touched && nationnalite?.invalid">
+                                    <small *ngIf="nationnalite?.errors?.required" class="text-danger">*Veuillez entrer votre nationnalité<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="telephone" class="form-control-label">N° Téléphone*</label>
+                                <input type="tel" class="form-control " id="telephone" aria-describedby="telephone" formControlName="telephone">
+                                <div *ngIf="telephone?.touched && telephone?.invalid">
+                                    <small *ngIf="telephone?.errors?.required" class="text-danger">*Veuillez entrer votre numéro de téléphone<br></small>
+                                    <small *ngIf="telephone?.errors?.pattern" class="text-danger">*Votre numéro est invalid<br></small>
+                                    <small *ngIf="telephone?.errors?.minlength" class="text-danger">*Votre numéro doit contenir au moins 6 chiffres.<br></small>
+                                    <small *ngIf="telephone?.errors?.maxlength" class="text-danger">*Votre numéro doit contenir 13 chiffres au maximum.<br></small>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="email" class="form-control-label">Adresse Email*</label>
+                                <input type="email" class="form-control " id="email" aria-describedby="email" placeholder="xyz@gmail.com" formControlName="email">
+                                <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.</small>
+                                <div *ngIf="email?.touched && email?.invalid">
+                                    <small *ngIf="email?.errors?.required" class="text-danger">*Veuillez entrer votre email<br></small>
+                                    <small *ngIf="email?.errors?.email" class="text-danger">*Votre email est invalid<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="exampleInputPassword1" class="form-control-label">Password*</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password">
+                                <div *ngIf="password?.touched && password?.invalid">
+                                    <small *ngIf="password?.errors?.required" class="text-danger">*Veuillez entrer votre mot de passe<br></small>
+                                    <small *ngIf="password?.errors?.pattern" class="text-danger">*Votre mot de passe doit contenir au moins 1 lettre spéciale, 1 lettre miniscule, 1 lettre majuscule and 1 chiffre<br></small>
+                                    <small *ngIf="password?.errors?.minlength" class="text-danger">*Votre mot de passe doit contenir au moins 6 caractères.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="card-header card-header-text mt-3">Votre Candidature</h5>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="typeposte" class="form-control-label">Le type de poste*</label>
+                                <select class="form-control " id="typeposte" formControlName="poste">
+                                            <option></option>
+                                               <option>Apprentissage</option>
+                                               <option>Emploi</option>
+                                               <option>Emploi d'été</option>
+                                               <option>Stage</option>
+                                           </select>
+                                <div *ngIf="poste?.touched && poste?.invalid">
+                                    <small *ngIf="poste?.errors?.required" class="text-danger">*Veuillez séléctionner Le type de poste<br></small>
+                                </div>
+
+
+                            </div>
+                            <div class="col">
+                                <label for="secteur" class="form-control-label">Secteur recherché*</label>
+                                <select class="form-control " id="secteur" formControlName="secteur">
+                                            <option value="">&nbsp;</option>
+                                            <option value="ADMINISTRATIF - Accueil">ADMINISTRATIF - Accueil</option><option value="ADMINISTRATIF - Assistanat administratif">ADMINISTRATIF - Assistanat administratif</option><option value="ADMINISTRATIF - Communication &amp; évènementiel">ADMINISTRATIF - Communication &amp; évènementiel</option><option value="ADMINISTRATIF - Comptabilité / finances">ADMINISTRATIF - Comptabilité / finances</option><option value="ADMINISTRATIF - RH">ADMINISTRATIF - RH</option><option value="ADMINISTRATIF - Autre">ADMINISTRATIF - Autre</option><option value="ANIMATION ET SPORT - Animateur péri scolaire">ANIMATION ET SPORT - Animateur péri scolaire</option><option value="ANIMATION ET SPORT - Animateur sportif">ANIMATION ET SPORT - Animateur sportif</option><option value="ANIMATION ET SPORT - Autre animateur">ANIMATION ET SPORT - Autre animateur</option><option value="ANIMATION ET SPORT - Autre">ANIMATION ET SPORT - Autre</option><option value="COMMUNICATION – Communication et événementiel">COMMUNICATION – Communication et événementiel</option><option value="CULTUREL - Diffusion de l&#039;art et du patri">CULTUREL - Diffusion de l&#039;art et du patri</option><option value="CULTUREL - Enseignement artistique">CULTUREL - Enseignement artistique</option><option value="CULTUREL - Métiers du livre">CULTUREL - Métiers du livre</option><option value="CULTUREL - Autre">CULTUREL - Autre</option><option value="SANTE - Soin infirmier">SANTE - Soin infirmier</option><option value="SECURITE - Contrôle du stationnement">SECURITE - Contrôle du stationnement</option><option value="SECURITE - Police municipale">SECURITE - Police municipale</option><option value="SECURITE - Sécurité civile">SECURITE - Sécurité civile</option><option value="SECURITE - Autre">SECURITE - Autre</option><option value="SOCIAL : Animation – médiation famille">SOCIAL : Animation – médiation famille</option><option value="SOCIAL : Développement territorial">SOCIAL : Développement territorial</option><option value="TECHNIQUE - Chauffeur livreur">TECHNIQUE - Chauffeur livreur</option><option value="TECHNIQUE - Entretien espaces publics">TECHNIQUE - Entretien espaces publics</option><option value="TECHNIQUE - Entretien locaux et restauration">TECHNIQUE - Entretien locaux et restauration</option><option value="TECHNIQUE - Espaces verts">TECHNIQUE - Espaces verts</option><option value="TECHNIQUE - Ingénierie">TECHNIQUE - Ingénierie</option><option value="TECHNIQUE - Maintenance et travaux bâtiment">TECHNIQUE - Maintenance et travaux bâtiment</option><option value="TECHNIQUE – Mécanique parc automobile">TECHNIQUE – Mécanique parc automobile</option><option value="TECHNIQUE - Restauration collective">TECHNIQUE - Restauration collective</option><option value="TECHNIQUE - Technicien">TECHNIQUE - Technicien</option><option value="TECHNIQUE - Autre">TECHNIQUE - Autre</option>
+                                           </select>
+                                <div *ngIf="secteur?.touched && secteur?.invalid">
+                                    <small *ngIf="secteur?.errors?.required" class="text-danger">*Veuillez séléctionner Le secteur<br></small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="dispo" class="form-control-label">Vous êtes disponible à partir du*
+                                        </label>
+                                <input type="date" class="form-control " id="dispo" aria-describedby="dispo" formControlName="dispo">
+                                <div *ngIf="dispo?.touched && dispo?.invalid">
+                                    <small *ngIf="dispo?.errors?.required" class="text-danger">*Veuillez entrer la date que vous êtes disponible<br></small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="dispo2" class="form-control-label">Vous êtes disponible jusqu'au
+                                        </label>
+                                <input type="date" class="form-control " id="dispo2" aria-describedby="dispo2">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="cv" class="form-control-label">Votre Curricilum Vitae (CV)*
+                                    </label>
+                                <input type="file" class="form-control " id="cv" aria-describedby="cv" formControlName="cv">
+                                <div *ngIf="cv?.touched && cv?.invalid">
+                                    <small *ngIf="cv?.errors?.required" class="text-danger">*Veuillez entrer votre CV<br></small>
+                                </div>
+                            </div>
+                            <small id="cv" class="form-text text-muted">format .pdf, .doc, .odt, .png, .jpeg (Max 5 Mo)
+                                    </small>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="motivation" class="form-control-label">Votre Lettre de Motivation*
+                                    </label>
+                                <input type="file" class="form-control " id="motivation" aria-describedby="motivation" formControlName="motivation">
+                                <div *ngIf="motivation?.touched && motivation?.invalid">
+                                    <small *ngIf="motivation?.errors?.required" class="text-danger">*Veuillez entrer votre Motivation<br></small>
+                                </div>
+                            </div>
+                            <small id="motivation" class="form-text text-muted">format .pdf, .doc, .odt, .png, .jpeg (Max 5 Mo)
+                                    </small>
+                        </div>
+                        <h5 class="card-header card-header-text mt-3">Votre Situation Aujourd'hui</h5>
+                        <fieldset class="form-group">
+                            <label class="form-control-label">Vous êtes*</label>
+                            <div class="form-check">
+                                <label for="optionsRadios1" class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked formControlName="situation">
+                                           Demandeur d&#039;emploi
+                                       </label>
+                            </div>
+                            <div class="form-check">
+                                <label for="optionsRadios2" class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" formControlName="situation">
+                                           Etudiant                                           </label>
+                            </div>
+                            <div class="form-check">
+                                <label for="optionsRadios2" class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" formControlName="situation">
+                                           Lauréat de concours                                           </label>
+                            </div>
+                            <div class="form-check">
+                                <label for="optionsRadios2" class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios4" value="option4" formControlName="situation">
+                                           Fonctionnaire                                          </label>
+                            </div>
+                            <div class="form-check">
+                                <label for="optionsRadios2" class="form-check-label">
+                                           <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios5" value="option5" formControlName="situation">
+                                           Autres                                          </label>
+                            </div>
+                            <label for="typeposte" class="form-control-label">Dernier diplôme obtenu*</label>
+                            <select class="form-control " id="typeposte" formControlName="diplome">
+                                <option></option>
+                                           <option>Sans Diplôme</option>
+                                           <option>Baccalauréat</option>
+                                           <option>Brevet des Collèges</option>
+                                           <option>Doctorat</option>
+                                           <option>Grandes écoles / Ingénieur</option>
+                                           <option>Licence</option>
+                                       </select>
+                            <div *ngIf="diplome?.touched && diplome?.invalid">
+                                <small *ngIf="diplome?.errors?.required" class="text-danger">*Veuillez séléctionner votre dernier diplôme<br></small>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-30">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form Control ends -->
+
+
+    </div>
+</div>
+<app-footer></app-footer>

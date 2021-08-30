@@ -1,0 +1,73 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4 row">
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-center justify-content-between">
+                        <h2 class="m-0 font-weight-bold text-primary">Modifier mon Profil</h2>
+                    </div>
+                    <div class="container col-3">
+                        <img src=" ../../../../../assets/images/formalab.png " alt="photo de profil " class="img-fluid img-thumbnail" width=" 10% "> Modifier ma photo <input type="file">
+                    </div>
+
+                    <div class="card-body ">
+                        <form class="container" [formGroup]="updateProfilForm" (ngSubmit)="onSave()">
+                            <h5>Changer Votre Mot De Passe</h5><br>
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <label for="anciennemdp" id="anciennemdp">Saisir votre ancienne mot de passe : </label>
+                                    <input type="password" class="form-control" formControlName="anciennemdp">
+                                    <div *ngIf="anciennemdp?.touched && anciennemdp?.invalid">
+                                        <small *ngIf="anciennemdp?.errors?.required" class="text-danger">*Veuillez saisir votre ancienne mot de passe<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="nouveaumdp" id="nouveaumdp">Saisir votre nouveau mot de passe : </label>
+                                    <input type="password" class="form-control" formControlName="nouveaumdp">
+                                    <div *ngIf="nouveaumdp?.touched && nouveaumdp?.invalid">
+                                        <small *ngIf="nouveaumdp?.errors?.required" class="text-danger">*Veuillez saisir votre nouveau mot de passe.<br></small>
+                                        <small *ngIf="nouveaumdp?.errors?.pattern" class="text-danger">*Le mot de passe doit contenir au moins 1 lettre spéciale, 1 lettre miniscule, 1 lettre majuscule and 1 chiffre.<br></small>
+                                        <small *ngIf="nouveaumdp?.errors?.minlength" class="text-danger">*Le mot de passe doit contenir au moins 6 caractères.</small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="renouveaumdp" id="renouveaumdp">Répéter votre nouveau mot de passe : </label>
+                                    <input type="password" class="form-control" formControlName="renouveaumdp">
+                                    <div *ngIf="renouveaumdp?.touched && renouveaumdp?.invalid">
+                                        <small *ngIf="renouveaumdp?.errors?.required" class="text-danger">*Veuillez saisir votre nouveau mot de passe a nouveau.<br></small>
+                                    </div>
+                                    <div *ngIf="renouveaumdp?.valid && renouveaumdp?.value != nouveaumdp?.value" class="text-danger">
+                                        <small> Mot de passe n'est pas confirmé </small>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-30" [routerLink]="['/employe/afficher-profil']">Enregistrer les modifications</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

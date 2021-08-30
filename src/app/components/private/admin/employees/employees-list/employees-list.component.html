@@ -1,0 +1,244 @@
+<div class="sidebar-mini fixed">
+    <div class="wrapper">
+
+        <!-- Navbar-->
+        <app-topbar></app-topbar>
+    </div>
+
+    <!-- Side-Nav-->
+    <app-sidebar></app-sidebar>
+    <!-- Sidebar chat end-->
+
+    <div class="content-wrapper">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+
+            <!-- Header Starts -->
+            <div class="row">
+                <div class="col-sm-12 p-0">
+                    <div class="main-header">
+                        <h4>Digital RH</h4>
+                        <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                            <li class="breadcrumb-item">
+                                <a href="#">
+                                    <i class="icofont icofont-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="#">Gestion</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Les Personnels</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- Header end -->
+
+            <!-- Tables start -->
+            <!-- Row start -->
+            <div>
+                <a class="btn btn-sm btn-primary mb-2 ms-5" [routerLink]="['/admin/employess/add-employee']">Ajouter un nouveau employé</a>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="table-responsive">
+                                <table class="table m-b-0 photo-table">
+                                    <thead>
+                                        <tr class="text-uppercase">
+                                            <th>Photo</th>
+                                            <th>Code</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th>Poste</th>
+                                            <th>Date de début</th>
+                                            <th>Date de Naissance</th>
+                                            <th>Salaire</th>
+                                            <th>Adresse Email</th>
+                                            <th>Téléphone</th>
+                                            <th>Statut</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                            </th>
+                                            <th>01015878</th>
+                                            <td>
+                                                Airi
+                                            </td>
+                                            <td>
+                                                Satou
+                                            </td>
+                                            <td>Chief Executive Officer (CEO) </td>
+                                            <td>October 01, 2015
+                                            </td>
+                                            <td>October 21, 1997</td>
+                                            <td>$1,200,000
+                                            </td>
+                                            <td>azy@gmail.com</td>
+                                            <td>21456987</td>
+                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                            </th>
+                                            <th>01015878</th>
+                                            <td>
+                                                Airi
+                                            </td>
+                                            <td>
+                                                Satou
+                                            </td>
+                                            <td>Chief Executive Officer (CEO) </td>
+                                            <td>October 01, 2015
+                                            </td>
+                                            <td>October 21, 1997</td>
+                                            <td>$1,200,000
+                                            </td>
+                                            <td>azy@gmail.com</td>
+                                            <td>21456987</td>
+                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                            </th>
+                                            <th>01015878</th>
+                                            <td>
+                                                Airi
+                                            </td>
+                                            <td>
+                                                Satou
+                                            </td>
+                                            <td>Chief Executive Officer (CEO) </td>
+                                            <td>October 01, 2015
+                                            </td>
+                                            <td>October 21, 1997</td>
+                                            <td>$1,200,000
+                                            </td>
+                                            <td>azy@gmail.com</td>
+                                            <td>21456987</td>
+                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                            </th>
+                                            <th>01015878</th>
+                                            <td>
+                                                Airi
+                                            </td>
+                                            <td>
+                                                Satou
+                                            </td>
+                                            <td>Chief Executive Officer (CEO) </td>
+                                            <td>October 01, 2015
+                                            </td>
+                                            <td>October 21, 1997</td>
+                                            <td>$1,200,000
+                                            </td>
+                                            <td>azy@gmail.com</td>
+                                            <td>21456987</td>
+                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                            </th>
+                                            <th>01015878</th>
+                                            <td>
+                                                Airi
+                                            </td>
+                                            <td>
+                                                Satou
+                                            </td>
+                                            <td>Chief Executive Officer (CEO) </td>
+                                            <td>October 01, 2015
+                                            </td>
+                                            <td>October 21, 1997</td>
+                                            <td>$1,200,000
+                                            </td>
+                                            <td>azy@gmail.com</td>
+                                            <td>21456987</td>
+                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                            </th>
+                                            <th>01015878</th>
+                                            <td>
+                                                Airi
+                                            </td>
+                                            <td>
+                                                Satou
+                                            </td>
+                                            <td>Chief Executive Officer (CEO) </td>
+                                            <td>October 01, 2015
+                                            </td>
+                                            <td>October 21, 1997</td>
+                                            <td>$1,200,000
+                                            </td>
+                                            <td>azy@gmail.com</td>
+                                            <td>21456987</td>
+                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Row end -->
+            <!-- Tables end -->
+        </div>
+
+        <!-- Container-fluid ends -->
+    </div>
+</div>

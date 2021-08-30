@@ -1,0 +1,141 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Ajouter un nouveau employé</h6>
+                    </div>
+
+                    <div class="card-body">
+                        <form class="container" [formGroup]="addEmployeeForm" (ngSubmit)="OnAjout()">
+                            <div class="container col-3">
+                                <img src=" ../../../../../assets/images/formalab.png " alt="photo de profil " class="img-fluid img-thumbnail" width=" 10% ">
+                            </div>
+                            <div class="row">
+
+                                <div class="form-group col-4">
+                                    <label for="code" id="code">Code : </label>
+                                    <input type="number" class="form-control" formControlName="code">
+                                    <div *ngIf="code?.touched && code?.invalid">
+                                        <small *ngIf="code?.errors?.required" class="text-danger">*Veuillez saisir le code de l'employé a ajouter<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="nom" id="nom">Nom: </label>
+                                    <input type="text" class="form-control" formControlName="nom">
+                                    <div *ngIf="nom?.touched && nom?.invalid">
+                                        <small *ngIf="nom?.errors?.required" class="text-danger">*Veuillez saisir le nom de l'employé<br></small>
+                                        <small *ngIf="nom?.errors?.minlength" class="text-danger">*Le nom est invalid<br></small>
+                                        <small *ngIf="nom?.errors?.pattern" class="text-danger">*Le nom doit contenir que des alphabets<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="prenom" id="prenom">Prénom: </label>
+                                    <input type="text" class="form-control" formControlName="prenom">
+                                    <div *ngIf="prenom?.touched && prenom?.invalid">
+                                        <small *ngIf="prenom?.errors?.required" class="text-danger">*Veuillez saisir le prénom de l'employé<br></small>
+                                        <small *ngIf="prenom?.errors?.minlength" class="text-danger">*Le prénom est invalid<br></small>
+                                        <small *ngIf="prenom?.errors?.pattern" class="text-danger">*Le prénom doit contenir que des alphabets<br></small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    <label for="poste" id="poste">Poste : </label>
+                                    <input type="text" class="form-control" formControlName="poste">
+                                    <div *ngIf="poste?.touched && poste?.invalid">
+                                        <small *ngIf="poste?.errors?.required" class="text-danger">*Veuillez saisir le poste de l'employé a ajouter<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="datedebut" id="datedebut">Date de Début : </label>
+                                    <input type="date" class="form-control" formControlName="datedebut">
+                                    <div *ngIf="datedebut?.touched && datedebut?.invalid">
+                                        <small *ngIf="datedebut?.errors?.required" class="text-danger">*Veuillez saisir la date de début<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="datenaissance" id="datenaissance">Date de Naissance : </label>
+                                    <input type="date" class="form-control" formControlName="datenaissance">
+                                    <div *ngIf="datenaissance?.touched && datenaissance?.invalid">
+                                        <small *ngIf="datenaissance?.errors?.required" class="text-danger">*Veuillez saisir la date de naissance<br></small>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    <label for="Salaire" id="Salaire">Salaire : </label>
+                                    <input type="number" class="form-control" formControlName="salaire">
+                                    <div *ngIf="salaire?.touched && salaire?.invalid">
+                                        <small *ngIf="salaire?.errors?.required" class="text-danger">*Veuillez saisir le salaire de l'employé<br></small>
+                                        <small *ngIf="salaire?.errors?.pattern" class="text-danger">*Salaire invalid<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="email" id="email">Adresse Email : </label>
+                                    <input type="email" class="form-control" formControlName="email">
+                                    <div *ngIf="email?.touched && email?.invalid">
+                                        <small *ngIf="email?.errors?.required" class="text-danger">*Veuillez entrer l'email<br></small>
+                                        <small *ngIf="email?.errors?.email" class="text-danger">*Email est invalid<br></small>
+                                    </div>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="statut" id="statut">Statut : </label>
+                                    <input type="text" class="form-control" formControlName="statut">
+                                    <div *ngIf="statut?.touched && statut?.invalid">
+                                        <small *ngIf="statut?.errors?.required" class="text-danger">*Veuillez saisir le statut de l'employé<br></small>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="telephone" id="telephone">Téléphone : </label>
+                                    <input type="telephone" class="form-control" formControlName="telephone">
+                                    <div *ngIf="telephone?.touched && telephone?.invalid">
+                                        <small *ngIf="telephone?.errors?.required" class="text-danger">*Veuillez entrer le numéro de téléphone<br></small>
+                                        <small *ngIf="telephone?.errors?.pattern" class="text-danger">*Le numéro est invalid<br></small>
+                                        <small *ngIf="telephone?.errors?.minlength" class="text-danger">*Le numéro doit contenir au moins 6 chiffres.<br></small>
+                                        <small *ngIf="telephone?.errors?.maxlength" class="text-danger">*Le numéro doit contenir 13 chiffres au maximum.<br></small>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-warning mt-3" [routerLink]="['/admin/employees/employees-list']">Ajouter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Main Content -->
+
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
