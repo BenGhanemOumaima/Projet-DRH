@@ -37,13 +37,6 @@ export class CandidatureComponent implements OnInit {
         Validators.maxLength(13),
       ]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.pattern(
-          '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
-        ),
-        Validators.minLength(6),
-      ]),
       poste: new FormControl('', [Validators.required]),
       secteur: new FormControl('', [Validators.required]),
       dispo: new FormControl('', [Validators.required]),
@@ -80,9 +73,6 @@ export class CandidatureComponent implements OnInit {
   }
   get email() {
     return this.candidatureForm.get('email');
-  }
-  get password() {
-    return this.candidatureForm.get('password');
   }
   get poste() {
     return this.candidatureForm.get('poste');

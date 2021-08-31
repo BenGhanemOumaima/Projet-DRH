@@ -20,6 +20,7 @@ import { AfficherProfilComponent } from './components/private/employe/afficher-p
 import { DemandecongeComponent } from './components/private/employe/demandeconge/demandeconge.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateProfilComponent } from './components/private/employe/update-profil/update-profil.component';
+import { RecrutementListComponent } from './components/private/admin/recrutement/recrutement-list/recrutement-list.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UpdateProfilComponent } from './components/private/employe/update-profi
     AddEmployeeComponent,
     AfficherProfilComponent,
     DemandecongeComponent,
-    UpdateProfilComponent  ],
+    UpdateProfilComponent,
+    RecrutementListComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

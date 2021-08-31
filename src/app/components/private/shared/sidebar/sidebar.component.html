@@ -6,7 +6,7 @@
             <li class="nav-level"></li>
             <li class="active treeview">
                 <a class="waves-effect waves-dark" [routerLink]="['/dashboard']">
-                    <i class="icon-speedometer"></i><span> Tableau de bord</span>
+                    <i class="fas fa-tachometer-alt"></i><span> Tableau de bord</span>
                 </a>
             </li>
             <hr>
@@ -14,18 +14,23 @@
 
             <li class="treeview">
                 <a class="waves-effect waves-dark" [routerLink]="['/admin/employees/employees-list']">
-                    <i class="icon-list"></i><span> Gestion des personnels</span>
+                    <i class="fas fa-users"></i><span> Gestion des personnels</span>
                 </a>
             </li>
             <li class="treeview">
                 <a class="waves-effect waves-dark" [routerLink]="['/admin/conges/conges-list']">
-                    <i class="icon-list"></i><span> Gestion des congés</span>
+                    <i class="fas fa-door-open"></i><span> Gestion des congés</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a class="waves-effect waves-dark" [routerLink]="['/admin/recrutement/recrutement-list']">
+                    <i class="fas fa-user-tie"></i><span> Gestion des recrutements</span>
                 </a>
             </li>
             <hr>
             <li class="treeview">
                 <a class="waves-effect waves-dark" [routerLink]="['/employe/demandeconge']">
-                    <i class="icon-list"></i><span> Demande de Congé</span>
+                    <i class="fas fa-door-closed"></i><span> Demande de Congé</span>
                 </a>
             </li>
         </ul>

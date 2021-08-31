@@ -105,15 +105,7 @@
                                     <small *ngIf="email?.errors?.email" class="text-danger">*Votre email est invalid<br></small>
                                 </div>
                             </div>
-                            <div class="col">
-                                <label for="exampleInputPassword1" class="form-control-label">Password*</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password">
-                                <div *ngIf="password?.touched && password?.invalid">
-                                    <small *ngIf="password?.errors?.required" class="text-danger">*Veuillez entrer votre mot de passe<br></small>
-                                    <small *ngIf="password?.errors?.pattern" class="text-danger">*Votre mot de passe doit contenir au moins 1 lettre spéciale, 1 lettre miniscule, 1 lettre majuscule and 1 chiffre<br></small>
-                                    <small *ngIf="password?.errors?.minlength" class="text-danger">*Votre mot de passe doit contenir au moins 6 caractères.</small>
-                                </div>
-                            </div>
+
                         </div>
                         <h5 class="card-header card-header-text mt-3">Votre Candidature</h5>
                         <div class="form-group row">
