@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="container" [formGroup]="addEmployeeForm" (ngSubmit)="OnAjout()">
+                        <form class="container" [formGroup]="addEmployeeForm" (ngSubmit)="addPersonnel()">
                             <div class="container col-3">
                                 <img src=" ../../../../../assets/images/formalab.png " alt="photo de profil " class="img-fluid img-thumbnail" width=" 10% ">
                             </div>
@@ -37,9 +37,10 @@
 
                                 <div class="form-group col-4">
                                     <label for="code" id="code">Code : </label>
-                                    <input type="number" class="form-control" formControlName="code">
+                                    <input type="password" class="form-control" formControlName="code">
                                     <div *ngIf="code?.touched && code?.invalid">
                                         <small *ngIf="code?.errors?.required" class="text-danger">*Veuillez saisir le code de l'employé a ajouter<br></small>
+                                        <small *ngIf="code?.errors?.pattern" class="text-danger">*Code invalid<br></small>
                                     </div>
                                 </div>
                                 <div class="form-group col-4">
@@ -57,7 +58,8 @@
                                     <div *ngIf="prenom?.touched && prenom?.invalid">
                                         <small *ngIf="prenom?.errors?.required" class="text-danger">*Veuillez saisir le prénom de l'employé<br></small>
                                         <small *ngIf="prenom?.errors?.minlength" class="text-danger">*Le prénom est invalid<br></small>
-                                        <small *ngIf="prenom?.errors?.pattern" class="text-danger">*Le prénom doit contenir que des alphabets<br></small>
+                                        <small *ngIf="nom?.errors?.pattern" class="text-danger">*Le prénom doit contenir que des alphabets<br></small>
+
                                     </div>
                                 </div>
 
@@ -105,14 +107,7 @@
                                         <small *ngIf="email?.errors?.email" class="text-danger">*Email est invalid<br></small>
                                     </div>
                                 </div>
-                                <div class="form-group col-4">
-                                    <label for="statut" id="statut">Statut : </label>
-                                    <input type="text" class="form-control" formControlName="statut">
-                                    <div *ngIf="statut?.touched && statut?.invalid">
-                                        <small *ngIf="statut?.errors?.required" class="text-danger">*Veuillez saisir le statut de l'employé<br></small>
-                                    </div>
 
-                                </div>
                                 <div class="form-group col-4">
                                     <label for="telephone" id="telephone">Téléphone : </label>
                                     <input type="telephone" class="form-control" formControlName="telephone">
@@ -125,7 +120,7 @@
 
                                 </div>
                             </div>
-                            <button class="btn btn-sm btn-warning mt-3 mx-3" [routerLink]="['/admin/employees/employees-list']">Ajouter</button>
+                            <button class="btn btn-sm btn-primary mt-3" type="submit" [disabled]="addEmployeeForm.invalid">Ajouter</button>
                             <button class="btn btn-sm btn-danger mt-3" [routerLink]="['/admin/employees/employees-list']">Annuler</button>
 
                         </form>

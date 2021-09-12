@@ -45,11 +45,11 @@ const routes: Routes = [
     component:CongesListComponent
   },
   {
-    path:'admin/employess/update-employee',
+    path:'admin/employees/update-employee/:id',
     component:UpdateEmployeeComponent
   },
   {
-    path:'admin/employess/add-employee',
+    path:'admin/employees/add-employee',
     component:AddEmployeeComponent
   },
   {

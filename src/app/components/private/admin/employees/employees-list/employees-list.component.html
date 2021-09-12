@@ -38,7 +38,8 @@
             <!-- Tables start -->
             <!-- Row start -->
             <div>
-                <a class="btn btn-sm btn-primary mb-2 ms-5" [routerLink]="['/admin/employess/add-employee']">Ajouter un nouveau employé</a>
+                <a class="btn btn-sm btn-primary mb-2 ms-5" [routerLink]="['/admin/employees/add-employee']">Ajouter un nouveau employé</a>
+                <input type="text" placeholder="Rechercher ..." (input)="filterByName(nom)">
             </div>
             <div class="row">
                 <div class="col-xl-12 col-lg-12">
@@ -64,168 +65,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor="let p of personnelsList">
                                             <th>
-                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
+                                                <img class="img-fluid img-circle " src="p.photo" alt="User">
                                             </th>
-                                            <th>01015878</th>
+                                            <th>{{p.code}}</th>
                                             <td>
-                                                Airi
-                                            </td>
-                                            <td>
-                                                Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>October 01, 2015
-                                            </td>
-                                            <td>October 21, 1997</td>
-                                            <td>$1,200,000
-                                            </td>
-                                            <td>azy@gmail.com</td>
-                                            <td>21456987</td>
-                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
-                                            </td>
-                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                {{p.nom}}
                                             </td>
                                             <td>
-                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
+                                                {{p.prenom}}
+                                            </td>
+                                            <td>{{p.poste}}</td>
+                                            <td>{{p.datedebut}}
+                                            </td>
+                                            <td>{{p.datenaissance}}</td>
+                                            <td>{{p.salaire}}
+                                            </td>
+                                            <td>{{p.email}}</td>
+                                            <td>{{p.telephone}}</td>
+                                            <td> <button type="button " class="btn btn-danger btn-circle btn-sm ">{{p.statut}} </button>
+                                            </td>
+                                            <td><button class="btn btn-outline-danger " (click)="deletePersonnel(p)"><i class="fas fa-trash "></i></button>
+                                            </td>
+                                            <td>
+                                                <a [routerLink]="['/admin/employees/update-employee',p.id]"><button class="btn btn-outline-success "><i class="fas fa-user-edit "></i></button></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th>
-                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
-                                            </th>
-                                            <th>01015878</th>
-                                            <td>
-                                                Airi
-                                            </td>
-                                            <td>
-                                                Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>October 01, 2015
-                                            </td>
-                                            <td>October 21, 1997</td>
-                                            <td>$1,200,000
-                                            </td>
-                                            <td>azy@gmail.com</td>
-                                            <td>21456987</td>
-                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
-                                            </td>
-                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                            <td>
-                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
-                                            </th>
-                                            <th>01015878</th>
-                                            <td>
-                                                Airi
-                                            </td>
-                                            <td>
-                                                Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>October 01, 2015
-                                            </td>
-                                            <td>October 21, 1997</td>
-                                            <td>$1,200,000
-                                            </td>
-                                            <td>azy@gmail.com</td>
-                                            <td>21456987</td>
-                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
-                                            </td>
-                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                            <td>
-                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
-                                            </th>
-                                            <th>01015878</th>
-                                            <td>
-                                                Airi
-                                            </td>
-                                            <td>
-                                                Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>October 01, 2015
-                                            </td>
-                                            <td>October 21, 1997</td>
-                                            <td>$1,200,000
-                                            </td>
-                                            <td>azy@gmail.com</td>
-                                            <td>21456987</td>
-                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
-                                            </td>
-                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                            <td>
-                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
-                                            </th>
-                                            <th>01015878</th>
-                                            <td>
-                                                Airi
-                                            </td>
-                                            <td>
-                                                Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>October 01, 2015
-                                            </td>
-                                            <td>October 21, 1997</td>
-                                            <td>$1,200,000
-                                            </td>
-                                            <td>azy@gmail.com</td>
-                                            <td>21456987</td>
-                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
-                                            </td>
-                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                            <td>
-                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img class="img-fluid img-circle" src="../../../../../../assets/images/formalab.png" alt="User">
-                                            </th>
-                                            <th>01015878</th>
-                                            <td>
-                                                Airi
-                                            </td>
-                                            <td>
-                                                Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>October 01, 2015
-                                            </td>
-                                            <td>October 21, 1997</td>
-                                            <td>$1,200,000
-                                            </td>
-                                            <td>azy@gmail.com</td>
-                                            <td>21456987</td>
-                                            <td> <button type="button" class="btn btn-danger btn-circle btn-sm">Inactif </button>
-                                            </td>
-                                            <td><button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                            <td>
-                                                <a [routerLink]="['/admin/employess/update-employee']"><button class="btn btn-outline-success"><i class="fas fa-user-edit"></i></button></a>
-                                            </td>
-                                        </tr>
+
 
                                     </tbody>
                                 </table>

@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="container" [formGroup]="updateEmployeeForm" (ngSubmit)="OnModifie()">
+                        <form class="container" [formGroup]="updateEmployeeForm" (ngSubmit)="updatePersonnel()">
                             <div class="container col-3">
                                 <img src=" ../../../../../assets/images/formalab.png " alt="photo de profil " class="img-fluid img-thumbnail" width=" 10% ">
                             </div>
@@ -99,7 +99,7 @@
                                 </div>
 
                             </div>
-                            <button class="btn btn-sm btn-warning mt-3 mx-3" [routerLink]="['/admin/employees/employees-list']">Modifier</button>
+                            <button class="btn btn-sm btn-primary mt-3" type="submit" [disabled]="updateEmployeeForm.invalid">Modifier</button>
                             <button class="btn btn-sm btn-danger mt-3" [routerLink]="['/admin/employees/employees-list']">Annuler</button>
                         </form>
                     </div>

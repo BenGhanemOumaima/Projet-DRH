@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="container" [formGroup]="demandeCongeForm" (ngSubmit)="demandeConge()">
+                        <form class="container" [formGroup]="addCongeForm" (ngSubmit)="addConge()">
 
                             <div class="row">
 
@@ -38,8 +38,7 @@
                                     <input type="text" class="form-control" formControlName="nomprenom">
                                     <div *ngIf="nomprenom?.touched && nomprenom?.invalid">
                                         <small *ngIf="nomprenom?.errors?.required" class="text-danger">*Veuillez saisir Votre nom complet<br></small>
-                                        <small *ngIf="nomprenom?.errors?.minlength" class="text-danger">*Le nom et prénom sont invalids<br></small>
-                                        <small *ngIf="nomprenom?.errors?.pattern" class="text-danger">*Le nom et prénom doivent contenir que des alphabets<br></small>
+                                        <small *ngIf="nomprenom?.errors?.minlength" class="text-danger">*Le nom et prénom sont invalides<br></small>
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
@@ -69,14 +68,14 @@
                             <div class="row">
                                 <div class="form-group col-6"><label for="cause" id="cause">Cause : </label>
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Saisir la cause ici" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <textarea class="form-control" placeholder="Saisir la cause ici" id="floatingTextarea2" style="height: 100px" formControlName="cause"></textarea>
                                     </div>
                                     <div *ngIf="cause?.touched && cause?.invalid">
                                         <small *ngIf="cause?.errors?.required" class="text-danger">*Veuillez expliquer la cause<br></small>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-sm btn-success mt-3 mx-3">Envoyer la demande</button>
+                            <button class="btn btn-sm btn-primary mt-3" type="submit">Envoyer la demande</button>
                             <button class="btn btn-sm btn-danger mt-3" [routerLink]="['/admin/conges/conges-list']">Annuler</button>
                         </form>
                     </div>

@@ -44,99 +44,35 @@
                                 <table class="table m-b-0 photo-table">
                                     <thead>
                                         <tr class="text-uppercase">
-                                            <th>Nom & Prénom</th>
+                                            <th>#</th>
+                                            <th>NOM & PRENOM</th>
                                             <th>Poste</th>
-                                            <th>Solde du congés</th>
+
                                             <th>Date de début</th>
                                             <th>Date de fin</th>
                                             <th>Cause</th>
+                                            <th>Solde du congés</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor="let c of congesList">
+                                            <td>{{c.id}}</td>
                                             <td>
-                                                Airi Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
+                                                {{ c.nomprenom }} </td>
+                                            <td>{{ c.poste }} </td>
+                                            <td>{{c.datedebut}}</td>
+                                            <td>{{c.datefin}}</td>
+                                            <td>{{c.cause}}</td>
                                             <td>0</td>
-                                            <td>October 21, 2015</td>
-                                            <td>Novembre 01, 2015</td>
-                                            <td>Maladie</td>
 
-                                            <td> <i class="fas fa-check"></i></td>
+                                            <td> <i class=" fas fa-check "></i></td>
 
                                             <td>
-                                                <i class="fas fa-minus-circle"></i>
+                                                <i class="fas fa-minus-circle "></i>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                Airi Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>0</td>
-                                            <td>October 21, 2015</td>
-                                            <td>Novembre 01, 2015</td>
-                                            <td>Maladie</td>
-
-                                            <td> <i class="fas fa-check"></i></td>
-
-                                            <td>
-                                                <i class="fas fa-minus-circle"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Airi Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>0</td>
-                                            <td>October 21, 2015</td>
-                                            <td>Novembre 01, 2015</td>
-                                            <td>Maladie</td>
-
-                                            <td> <i class="fas fa-check"></i></td>
-
-                                            <td>
-                                                <i class="fas fa-minus-circle"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Airi Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>0</td>
-                                            <td>October 21, 2015</td>
-                                            <td>Novembre 01, 2015</td>
-                                            <td>Maladie</td>
-
-                                            <td> <i class="fas fa-check"></i></td>
-
-                                            <td>
-                                                <i class="fas fa-minus-circle"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Airi Satou
-                                            </td>
-                                            <td>Chief Executive Officer (CEO) </td>
-                                            <td>0</td>
-                                            <td>October 21, 2015</td>
-                                            <td>Novembre 01, 2015</td>
-                                            <td>Maladie</td>
-
-                                            <td> <i class="fas fa-check"></i></td>
-
-                                            <td>
-                                                <i class="fas fa-minus-circle"></i>
-                                            </td>
-                                        </tr>
-
-
                                     </tbody>
                                 </table>
                             </div>

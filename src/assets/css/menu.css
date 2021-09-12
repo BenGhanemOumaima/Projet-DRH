@@ -35,14 +35,14 @@ File: menu.css
 }
 
 .main-header-top {
-    background-color: #fff;
+    background-color: #caf0f8;
 }
 
 .nav-level {
     padding: 10px 0 !important;
     font-weight: 500;
     font-size: 13px;
-    color: #2196f3;
+    color: #4b535a;
     border-top: 1px solid #efefef;
     position: relative;
 }
@@ -80,14 +80,14 @@ File: menu.css
 
 .main-header-top .navbar .top-nav>li>a {
     opacity: 0.9;
-    color: #fff;
+    color: #03045e;
 }
 
 .main-header-top .navbar .top-nav>li>a:hover,
 .main-header-top .navbar .top-nav>li>a:active,
 .main-header-top .navbar .top-nav>li>a:focus {
     opacity: 1;
-    color: #f6f6f6;
+    color: #e9c46a;
 }
 
 .main-header-top .navbar .top-nav>li>a:hover i,
@@ -149,7 +149,7 @@ File: menu.css
 
 .sidebar-menu .treeview-menu {
     margin: 0 1px;
-    background: #fff;
+    background: #6777ef;
 }
 
 .sidebar-menu .treeview-menu>li>a {
@@ -417,7 +417,7 @@ header .wrapper {
 .main-header-top .top-nav .notification-menu .not-head {
     padding: 8px 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: #e9c46a;
     border-bottom: 1px solid #ccc;
     color: #333;
     font-size: 14px;
@@ -426,7 +426,7 @@ header .wrapper {
 
 .main-header-top .top-nav .notification-menu .not-footer {
     text-align: center;
-    background-color: #fff;
+    background-color: #e9c46a;
     padding: 5px;
 }
 
@@ -472,7 +472,7 @@ header .wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    background: #fff;
+    background: #e9c46a;
     padding-top: 50px;
     min-height: 100vh;
     width: 230px;

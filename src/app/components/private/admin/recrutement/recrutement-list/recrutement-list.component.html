@@ -49,9 +49,13 @@
                                             <th>Nom</th>
                                             <th>Prénom</th>
                                             <th>Ville</th>
+                                            <th>Nationnalité</th>
                                             <th>Date de naissance</th>
                                             <th>N° Téléphone</th>
+                                            <th>Email</th>
+                                            <th>Poste</th>
                                             <th>Disponible à partir du</th>
+                                            <th>Secteur</th>
                                             <th>CV</th>
                                             <th>Motivation</th>
                                             <th>Situation</th>
@@ -61,28 +65,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor="let r of recrutementsList">
                                             <td>
-                                                Airi
+                                                {{r.nom}}
                                             </td>
                                             <td>
-                                                Satou
+                                                {{r.prenom}}
                                             </td>
-                                            <td>Tunisia </td>
-                                            <td>October 01,2000
+                                            <td>{{r.ville}} </td>
+                                            <td>{{r.nationnalite}} </td>
+                                            <td>{{r.datenaissance}}
                                             </td>
-                                            <td>20201187</td>
-                                            <td>23/10/2021
+                                            <td>{{r.telephone}}</td>
+                                            <td>{{r.email}}
                                             </td>
-                                            <td></td>
-                                            <td></td>
-                                            <td> Etudiant
+                                            <td>{{r.poste}}</td>
+                                            <td>{{r.dispo}}</td>
+                                            <td>{{r.secteur}}</td>
+                                            <td> {{r.cv}}
                                             </td>
-                                            <td> licence
+                                            <td> {{r.motivation}}
                                             </td>
-                                            <td><button class="btn btn-success"><i class="fas fa-envelope"></i></button></td>
+                                            <td> {{r.situation}}
+                                            </td>
+                                            <td> {{r.diplome}}
+                                            </td>
+                                            <td><button class="btn btn-success "><i class="fas fa-envelope "></i></button></td>
                                             <td>
-                                                <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                <button class="btn btn-danger " (click)="deleteRecrute(r)"><i class="fas fa-trash "></i></button>
                                             </td>
                                         </tr>
 

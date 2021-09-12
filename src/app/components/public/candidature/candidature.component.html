@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="card-block container">
-                    <form [formGroup]="candidatureForm" (ngSubmit)="candidature()">
+                    <form [formGroup]="candidatureForm" (ngSubmit)="addRecrutement()">
                         <div class="form-group row">
                             <div class="col">
                                 <label for="nom" class="form-control-label">Nom*</label>
@@ -46,20 +46,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col">
-                                <label for="adresse" class="form-control-label">Adresse*</label>
-                                <input type="text" class="form-control " id="adresse" aria-describedby="adresse" formControlName="adresse">
-                                <div *ngIf="adresse?.touched && adresse?.invalid">
-                                    <small *ngIf="adresse?.errors?.required" class="text-danger">*Veuillez entrer votre adresse<br></small>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="codepostal" class="form-control-label">Code Postal*</label>
-                                <input type="number" class="form-control " id="codepostal" aria-describedby="codepostal" formControlName="codepostal">
-                                <div *ngIf="codepostal?.touched && codepostal?.invalid">
-                                    <small *ngIf="codepostal?.errors?.required" class="text-danger">*Veuillez entrer votre code postal<br></small>
-                                </div>
-                            </div>
+
                             <div class="col">
                                 <label for="ville" class="form-control-label">Ville*</label>
                                 <input type="text" class="form-control " id="ville" aria-describedby="ville" formControlName="ville">
@@ -67,6 +54,14 @@
                                     <small *ngIf="ville?.errors?.required" class="text-danger">*Veuillez entrer votre ville<br></small>
                                 </div>
                             </div>
+                            <div class="col">
+                                <label for="nationnalite" class="form-control-label">nationnalite*</label>
+                                <input type="text" class="form-control " id="nationnalite" aria-describedby="nationnalite" formControlName="nationnalite">
+                                <div *ngIf="nationnalite?.touched && nationnalite?.invalid">
+                                    <small *ngIf="nationnalite?.errors?.required" class="text-danger">*Veuillez entrer votre Nationnalité<br></small>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="form-group row">
                             <div class="col">
@@ -76,13 +71,7 @@
                                     <small *ngIf="datenaissance?.errors?.required" class="text-danger">*Veuillez entrer votre date de naissance<br></small>
                                 </div>
                             </div>
-                            <div class="col">
-                                <label for="nationnalité" class="form-control-label">Votre Nationnalité*</label>
-                                <input type="text" class="form-control " id="nationnalité" aria-describedby="nationnalité" formControlName="nationnalite">
-                                <div *ngIf="nationnalite?.touched && nationnalite?.invalid">
-                                    <small *ngIf="nationnalite?.errors?.required" class="text-danger">*Veuillez entrer votre nationnalité<br></small>
-                                </div>
-                            </div>
+
                             <div class="col">
                                 <label for="telephone" class="form-control-label">N° Téléphone*</label>
                                 <input type="tel" class="form-control " id="telephone" aria-describedby="telephone" formControlName="telephone">
@@ -145,11 +134,7 @@
                                     <small *ngIf="dispo?.errors?.required" class="text-danger">*Veuillez entrer la date que vous êtes disponible<br></small>
                                 </div>
                             </div>
-                            <div class="col">
-                                <label for="dispo2" class="form-control-label">Vous êtes disponible jusqu'au
-                                        </label>
-                                <input type="date" class="form-control " id="dispo2" aria-describedby="dispo2">
-                            </div>
+
                         </div>
                         <div class="form-group row">
                             <div class="col">

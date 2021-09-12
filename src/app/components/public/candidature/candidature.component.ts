@@ -5,6 +5,9 @@ import {
   FormBuilder,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Recrutement } from 'src/app/models/recrutement';
+import { RecrutementService } from 'src/app/services/recrutement.service';
 
 @Component({
   selector: 'app-candidature',
@@ -13,23 +16,25 @@ import {
 })
 export class CandidatureComponent implements OnInit {
   candidatureForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private recrutementService: RecrutementService,
+    private router: Router
+  ) {
     let FormControls = {
       nom: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
-        Validators.pattern('[a-zA-Z]')
+        Validators.pattern("[a-z .'-]+"),
       ]),
       prenom: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
-        Validators.pattern('[a-zA-Z]'),
+        Validators.pattern("[a-z .'-]+"),
       ]),
-      adresse: new FormControl('', [Validators.required]),
-      codepostal: new FormControl('', [Validators.required]),
       ville: new FormControl('', [Validators.required]),
-      datenaissance: new FormControl('', [Validators.required]),
       nationnalite: new FormControl('', [Validators.required]),
+      datenaissance: new FormControl('', [Validators.required]),
       telephone: new FormControl('', [
         Validators.required,
         Validators.pattern('[0-9]+'),
@@ -43,6 +48,7 @@ export class CandidatureComponent implements OnInit {
       cv: new FormControl('', [Validators.required]),
       motivation: new FormControl('', [Validators.required]),
       diplome: new FormControl('', [Validators.required]),
+      situation: new FormControl('', [Validators.required]),
     };
     this.candidatureForm = this.fb.group(FormControls);
   }
@@ -53,20 +59,14 @@ export class CandidatureComponent implements OnInit {
   get prenom() {
     return this.candidatureForm.get('prenom');
   }
-  get adresse() {
-    return this.candidatureForm.get('adresse');
-  }
-  get codepostal() {
-    return this.candidatureForm.get('codepostal');
+  get nationnalite() {
+    return this.candidatureForm.get('nationnalite');
   }
   get ville() {
     return this.candidatureForm.get('ville');
   }
   get datenaissance() {
     return this.candidatureForm.get('datenaissance');
-  }
-  get nationnalite() {
-    return this.candidatureForm.get('nationnalite');
   }
   get telephone() {
     return this.candidatureForm.get('telephone');
@@ -92,10 +92,41 @@ export class CandidatureComponent implements OnInit {
   get diplome() {
     return this.candidatureForm.get('diplome');
   }
+  get situation() {
+    return this.candidatureForm.get('situation');
+  }
 
   ngOnInit(): void {}
 
-  candidature() {
-    console.log(this.candidatureForm.value);
+  addRecrutement() {
+    let data = this.candidatureForm.value;
+    let recrutement = new Recrutement(
+      undefined,
+      data.nom,
+      data.prenom,
+      data.ville,
+      data.datenaissance,
+      data.telephone,
+      data.email,
+      data.poste,
+      data.dispo,
+      data.secteur,
+      data.cv,
+      data.motivation,
+      data.situation,
+      data.diplome,
+      data.nationnalite
+    );
+    console.log(recrutement);
+
+    this.recrutementService.addRecrutement(recrutement).subscribe(
+      (res) => {
+        //console.log(res);
+        this.router.navigateByUrl('admin/recrutement/recrutement-list');
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }

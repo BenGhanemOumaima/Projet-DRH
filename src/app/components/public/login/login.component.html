@@ -6,25 +6,26 @@
                     <img src="assets/images/myLogo.png" alt="logo" width="150" class="  mb-5 mt-2">
                     <h4 class="text-dark font-weight-normal">Bienvenue à <span class="font-weight-bold">DRH</span></h4>
                     <p class="text-muted">Avant de vous lancer, vous devez vous connecter ou contacter l'administration si vous n'avez pas encore de compte.</p>
-                    <form method="POST" action="#" class="needs-validation" novalidate="" [formGroup]="loginForm" (ngSubmit)="login()">
+                    <form class="needs-validation" [formGroup]="loginForm" (ngSubmit)="login()">
                         <div class="form-group">
-                            <label for="code">Code</label>
-                            <input id="code" type="number" class="form-control" name="code" tabindex="1" formControlName="code" autofocus>
-                            <div *ngIf="code?.touched && code?.invalid">
-                                <small *ngIf="code?.errors?.required" class="text-danger">*Veuillez entrer votre code<br></small>
+                            <label for="email">Email</label>
+                            <input id="email" type="email" class="form-control" name="email" tabindex="1" formControlName="email" autofocus>
+                            <div *ngIf="email?.touched && email?.invalid">
+                                <small *ngIf="email?.errors?.required" class="text-danger">*Veuillez entrer votre email<br></small>
+                                <small *ngIf="email?.errors?.email" class="text-danger">*Votre email est invalid<br></small>
                             </div>
 
                         </div>
 
                         <div class="form-group">
                             <div class="d-block">
-                                <label for="password" class="control-label">Mot de passe</label>
+                                <label for="code" class="control-label">Code</label>
                             </div>
-                            <input id="password" type="password" class="form-control" name="password" tabindex="2" formControlName="password" autofocus>
-                            <div *ngIf="password?.touched && password?.invalid">
-                                <small *ngIf="password?.errors?.required" class="text-danger">*Veuillez entrer votre mot de passe<br></small>
-                                <small *ngIf="password?.errors?.pattern" class="text-danger">*Le mot de passe doit contenir au moins 1 lettre spéciale, 1 lettre miniscule, 1 lettre majuscule and 1 chiffre<br></small>
-                                <small *ngIf="password?.errors?.minlength" class="text-danger">*Le mot de passe doit contenir au moins 6 caractères.</small>
+                            <input id="code" type="password" class="form-control" name="code" tabindex="2" formControlName="code" autofocus>
+                            <div *ngIf="code?.touched && code?.invalid">
+                                <small *ngIf="code?.errors?.required" class="text-danger">*Veuillez entrer votre code<br></small>
+                                <small *ngIf="code?.errors?.pattern" class="text-danger">*Code invalid<br></small>
+
                             </div>
                         </div>
 
@@ -32,7 +33,9 @@
 
                         <div class="form-group text-right">
 
-                            <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right" tabindex="4">Se Connecter</button>
+                            <button class="btn btn-primary btn-user btn-block" type="submit" [disabled]="loginForm.invalid">
+                                Se Connecter
+                            </button>
 
 
                         </div>

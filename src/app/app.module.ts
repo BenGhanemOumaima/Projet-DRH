@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateProfilComponent } from './components/private/employe/update-profil/update-profil.component';
 import { RecrutementListComponent } from './components/private/admin/recrutement/recrutement-list/recrutement-list.component';
 import { Page404Component } from './components/public/page404/page404.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { Page404Component } from './components/public/page404/page404.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastNoAnimationModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

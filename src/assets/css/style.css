@@ -3644,7 +3644,7 @@ pre {
     top: 0;
     height: 100%;
     width: 250px;
-    background-color: #fff;
+    background-color: #caf0f8;
     z-index: 880;
     left: 0;
 }
@@ -3761,7 +3761,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li>a.has-dropdown:after {
 body.sidebar-mini .main-sidebar .sidebar-menu>li.active>a {
     box-shadow: 0 4px 8px #acb5f6;
     background-color: #6777ef;
-    color: #fff;
+    color: #caf0f8;
 }
 
 body.sidebar-mini .main-sidebar .sidebar-menu>li ul.dropdown-menu {
@@ -3784,7 +3784,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu>li ul.dropdown-menu li.active>a:ho
 body.sidebar-mini .main-sidebar .sidebar-menu>li ul.dropdown-menu li a {
     height: 40px;
     padding: 0 20px;
-    background-color: #fff;
+    background-color: #caf0f8;
 }
 
 body.sidebar-mini .main-sidebar .sidebar-menu>li ul.dropdown-menu li a.has-dropdown:after {
@@ -3804,7 +3804,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu li:hover>ul.dropdown-menu {
 }
 
 body.sidebar-mini .main-sidebar .sidebar-menu li:hover>ul.dropdown-menu li:hover>a {
-    background-color: #fcfcfd;
+    background-color: #caf0f8;
 }
 
 body.sidebar-mini .main-sidebar .sidebar-menu li:hover>ul.dropdown-menu li .dropdown-menu {
@@ -3910,7 +3910,7 @@ body.layout-3 .navbar {
 
 body.layout-3 .navbar.navbar-secondary {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
-    background-color: #fff;
+    background-color: #03045e;
     top: 70px;
     padding: 0;
     z-index: 889;
@@ -4130,7 +4130,7 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li a:hover {
-    background-color: #f8fafb;
+    background-color: #caf0f8;
 }
 
 .main-sidebar .sidebar-menu li.active a {
@@ -4233,7 +4233,7 @@ body.layout-3 .main-footer {
 
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active a {
     background-color: #6777ef;
-    color: #fff;
+    color: #03045e;
 }
 
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a {
@@ -4268,7 +4268,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu>li.active>a:before {
 
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
     padding-left: 61px;
-    background-color: #fff;
+    background-color: #03045e;
 }
 
 @media (max-width: 1024px) {
