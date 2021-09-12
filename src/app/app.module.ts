@@ -21,6 +21,7 @@ import { DemandecongeComponent } from './components/private/employe/demandeconge
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateProfilComponent } from './components/private/employe/update-profil/update-profil.component';
 import { RecrutementListComponent } from './components/private/admin/recrutement/recrutement-list/recrutement-list.component';
+import { Page404Component } from './components/public/page404/page404.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { RecrutementListComponent } from './components/private/admin/recrutement
     AfficherProfilComponent,
     DemandecongeComponent,
     UpdateProfilComponent,
-    RecrutementListComponent  ],
+    RecrutementListComponent,
+    Page404Component  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

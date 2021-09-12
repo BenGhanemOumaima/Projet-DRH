@@ -13,6 +13,7 @@ import { CandidatureComponent } from './components/public/candidature/candidatur
 import { HomeComponent } from './components/public/home/home.component';
 import { LoginComponent } from './components/public/login/login.component';
 import { OffreEmploiComponent } from './components/public/offre-emploi/offre-emploi.component';
+import { Page404Component } from './components/public/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path:'admin/recrutement/recrutement-list',
     component:RecrutementListComponent
+  },
+  {
+    path:'**',
+    component:Page404Component
   }
 
 ];
